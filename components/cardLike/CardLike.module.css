@@ -23,4 +23,13 @@
   .heart_icon.active {
     fill: #e40000;
   }
+
+  /* &:hover {
+    .cardLike_title {
+      color: #e40000;
+    }
+    .heart_icon{
+        fill: #e40000;
+    }
+  } */
 }

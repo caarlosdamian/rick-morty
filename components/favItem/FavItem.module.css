@@ -1,0 +1,13 @@
+.fav_item_container {
+  display: flex;
+  justify-content: space-between;
+  padding: 2px 32px;
+  height: 26px;
+  border: 1px solid #494949;
+  color: white;
+  background: #9c9c9c;
+}
+
+.delete_icon{
+  cursor: pointer;
+}

@@ -6,24 +6,26 @@ import styles from './Card.module.css';
 import { useSelectedCharacterContext } from '@/context/selectedCharacterContext';
 
 export const Card = ({
-  character: { image, name, id },
+  character,
+  fav,
 }: {
   character: Character;
+  fav: boolean;
 }) => {
   const { selectedCharacter, setSelectedCharacter } =
     useSelectedCharacterContext();
   return (
     <div
       className={`${styles.card_container} ${
-        selectedCharacter === id ? styles.card_selected : ''
+        selectedCharacter === character.id ? styles.card_selected : ''
       }`}
-      onClick={() => setSelectedCharacter(id)}
+      onClick={() => setSelectedCharacter(character.id)}
     >
-      <span className={styles.card_title}>{name.split(' ')[0]}</span>
+      <span className={styles.card_title}>{character.name.split(' ')[0]}</span>
       <div className={styles.card_img}>
-        <Image fill src={image} alt={`photo-${name}`} />
+        <Image fill src={character.image} alt={`photo-${character.name}`} />
       </div>
-      <CardLike />
+      <CardLike character={character} active={fav} />
     </div>
   );
 };

@@ -11,6 +11,12 @@
   padding-top: 6px;
   display: flex;
   justify-content: center;
+  color: var(--white);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--green);
+  }
 
   @media (min-width: 768px) {
     top: auto;
