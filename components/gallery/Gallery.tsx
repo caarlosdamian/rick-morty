@@ -1,6 +1,7 @@
+import styles from './Gallery.module.css'
 
 export const Gallery = () => {
   return (
-    <div>Gallery</div>
+    <div className={styles.gallery_container}>Gallery</div>
   )
 }

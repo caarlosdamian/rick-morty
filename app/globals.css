@@ -1,3 +1,14 @@
+:root {
+  --dark-green: #608f09;
+  --dark-red: #7c1616;
+  --green: #76dd00;
+  --black: #212121;
+  --gray: #7b7b7bb2;
+  --white: #fff;
+  --red: #e92507;
+  --brown: #5b5454;
+}
+
 *,
 *::before,
 *::after {

@@ -1,0 +1,12 @@
+.gallery_container {
+  background: pink;
+  width: 270px;
+  height: 280px;
+  border-radius: 20px;
+  @media (min-width: 768px) {
+    flex: 1;
+    height: 100%;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}

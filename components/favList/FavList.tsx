@@ -1,6 +1,9 @@
+import styles from './FavList.module.css';
 
-export const FavList = () => {
+export const FavList = ({ className }: { className?: string }) => {
   return (
-    <div>FavList</div>
-  )
-}
+    <div className={`${styles.favlist_container} ${className || ''}`}>
+      FavList
+    </div>
+  );
+};

@@ -1,0 +1,12 @@
+.card_container {
+  background: aqua;
+  height: 227px;
+
+  @media (min-width: 768px) {
+    flex: 1;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    height: 100%;
+    position: relative;
+  }
+}
