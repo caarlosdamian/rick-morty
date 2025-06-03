@@ -4,33 +4,33 @@ export const GalleryStats = ({ character }: { character: Character }) => {
   const characterInfo = [
     {
       label: 'Origin',
-      value: character.origin.name,
+      value: character?.origin.name,
     },
     {
       label: 'Location',
-      value: character.location.name,
+      value: character?.location.name,
     },
     {
       label: 'Gender',
-      value: character.gender,
+      value: character?.gender,
     },
     {
       label: 'Episodes',
-      value: character.episode.length,
+      value: character?.episode.length,
     },
   ];
 
   return (
     <div className={styles.gallery_stats_container}>
       <div className={styles.gallery_stats_item}>
-        <strong>{character.name}</strong>
-        <span>{character.species}</span>
+        <strong>{character?.name}</strong>
+        <span>{character?.species}</span>
       </div>
       <div className={styles.gallery_stats_secondary}>
         {characterInfo.map((info) => (
           <div className={styles.gallery_stats_item} key={info.label}>
-            <strong>{info.label}</strong>
-            <span>{info.value}</span>
+            <strong>{info?.label}</strong>
+            <span>{info?.value}</span>
           </div>
         ))}
       </div>

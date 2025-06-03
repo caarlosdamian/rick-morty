@@ -3,20 +3,18 @@ import React from 'react';
 import { CardList } from '../cardList/CardList';
 import { Gallery } from '../gallery/Gallery';
 import { Character } from 'rickmortyapi';
+import { SelectedCharacterContextProvider } from '@/context/selectedCharacterContext';
 
 interface Props {
   characters: Character[];
 }
 
 export const Results = ({ characters }: Props) => {
-  // const [selectedElement, setSelectedElement] = useState(() =>
-  //   characters?.length !== 0 ? characters[0] : {}
-  // );
-  // WIP add selected funtionality
+  // filter list based on searchbox
   return (
-    <>
+    <SelectedCharacterContextProvider>
       <CardList characters={characters as Character[]} />
-      <Gallery character={characters[0] as Character} />
-    </>
+      <Gallery  />
+    </SelectedCharacterContextProvider>
   );
 };

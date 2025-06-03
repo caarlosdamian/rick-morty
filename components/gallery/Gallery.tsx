@@ -3,15 +3,23 @@ import Image from 'next/image';
 import { GalleryLiveStat } from '../galleryLiveStat/GalleryLiveStat';
 import { GalleryStats } from '../galleryStats/GalleryStats';
 import styles from './Gallery.module.css';
-import { Character } from 'rickmortyapi';
+import { useSelectedCharacterContext } from '@/context/selectedCharacterContext';
 
-export const Gallery = ({ character }: { character: Character }) => {
+export const Gallery = () => {
+  const { selectedCharacterData } = useSelectedCharacterContext();
+
   return (
     <div className={styles.gallery_container}>
-      {/* <GalleryPhoto /> */}
-      <Image objectFit="cover" fill src={character?.image} alt="user" />
-      <GalleryLiveStat status={character.status} />
-      <GalleryStats character={character} />
+      {selectedCharacterData && (
+        <Image
+          objectFit="cover"
+          fill
+          src={selectedCharacterData?.image || ''}
+          alt="user"
+        />
+      )}
+      <GalleryLiveStat status={selectedCharacterData?.status} />
+      <GalleryStats character={selectedCharacterData} />
     </div>
   );
 };

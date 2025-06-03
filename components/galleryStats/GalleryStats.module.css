@@ -46,5 +46,6 @@
 @media (min-width: 768px) {
   .gallery_stats_container {
     border-bottom-right-radius: 0;
+    gap: 34px;
   }
 }
