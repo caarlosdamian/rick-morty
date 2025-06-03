@@ -6,19 +6,25 @@ Aplicación web para mostrar personajes de Rick & Morty con funcionalidades de f
 
 ---
 
+
+### 1. Instalar dependencias
+```bash
+npm install
+```
+
 ## Cómo levantar el proyecto
 
-1. Levantar la base de datos local usando json-server:
+2. Levantar la base de datos local usando json-server:
 
 ```bash
 npx json-server db.json --port 8000
 ```
-2. Ejecutar la aplicación en modo desarrollo:
+3. Ejecutar la aplicación en modo desarrollo:
 
 ```bash
 npm run dev
 ```
-3. Correr las pruebas unitarias:
+4. Correr las pruebas unitarias:
 
 ```bash
 npm run test
