@@ -14,6 +14,7 @@ export const CardLike = ({
   const dispatch = useAppDispatch();
   return (
     <div
+      role="button"
       className={styles.cardLike_container}
       onClick={() => dispatch(addFavorite(character))}
     >
@@ -22,6 +23,7 @@ export const CardLike = ({
         width="24"
         height="24"
         viewBox="0 0 24 24"
+        role="img"
         className={`${styles.heart_icon} ${active && styles.active}`}
       >
         <g clipPath="url(#clip0_7_317)">
