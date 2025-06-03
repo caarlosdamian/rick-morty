@@ -4,11 +4,11 @@ export const GalleryStats = ({ character }: { character: Character }) => {
   const characterInfo = [
     {
       label: 'Origin',
-      value: character?.origin.name,
+      value: character?.origin?.name,
     },
     {
       label: 'Location',
-      value: character?.location.name,
+      value: character?.location?.name,
     },
     {
       label: 'Gender',
@@ -16,7 +16,7 @@ export const GalleryStats = ({ character }: { character: Character }) => {
     },
     {
       label: 'Episodes',
-      value: character?.episode.length,
+      value: character?.episode?.length,
     },
   ];
 

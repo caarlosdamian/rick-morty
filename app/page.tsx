@@ -1,13 +1,24 @@
 import Image from 'next/image';
 import styles from '../styles/page.module.css';
 import { FavList } from '@/components';
-import { Character, getCharacters } from 'rickmortyapi';
+import { getCharacters } from 'rickmortyapi';
 import { Results } from '@/components/results/Results';
 
-export default async function Home() {
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: Promise<{ query: string }>;
+}) {
+  const { query } = await searchParams;
+
+  const params = {
+    ...(query && { name: query }),
+  };
+
   const {
     data: { results },
-  } = await getCharacters();
+  } = await getCharacters(params);
+
   return (
     <main className={styles.main_container}>
       <div className={styles.main_bg}>
@@ -18,7 +29,7 @@ export default async function Home() {
             </div>
           </div>
           <div className={styles.main_results}>
-            <Results characters={results as Character[]} />
+            <Results characters={results || []} />
           </div>
         </div>
       </div>

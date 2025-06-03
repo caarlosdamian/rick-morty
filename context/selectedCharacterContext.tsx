@@ -17,12 +17,25 @@ interface ContextI {
   selectedCharacterData: Character;
 }
 
+interface Props extends PropsWithChildren {
+  characters: Character[];
+}
 export const SelectedCharacterContext = createContext({});
 
 export const SelectedCharacterContextProvider = ({
   children,
-}: PropsWithChildren) => {
-  const [selectedCharacter, setSelectedCharacter] = useState<number>(1);
+  characters,
+}: Props) => {
+  const [selectedCharacter, setSelectedCharacter] = useState<number>(() =>
+    characters?.length !== 0 ? characters[0].id : 1
+  );
+
+  useEffect(() => {
+    setSelectedCharacter(() =>
+      characters?.length !== 0 ? characters[0].id : 1
+    );
+  }, [characters]);
+
   const [selectedCharacterData, setSelectedCharacterData] = useState<
     Character | undefined
   >();

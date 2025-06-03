@@ -14,7 +14,7 @@ export const Gallery = () => {
         <Image
           objectFit="cover"
           fill
-          src={selectedCharacterData?.image || ''}
+          src={selectedCharacterData?.image || 'https://placehold.co/600x400/png'}
           alt="user"
         />
       )}

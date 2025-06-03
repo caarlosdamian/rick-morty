@@ -22,7 +22,7 @@ export const CardList = ({ characters }: Props) => {
               className={styles.card_content}
               ref={scrollRef as Ref<HTMLDivElement>}
             >
-              {characters.map((character) => (
+              {characters?.map((character) => (
                 <Card key={character.id} character={character} />
               ))}
             </div>

@@ -1,6 +1,37 @@
+'use client';
+import { useDebounce } from '@/hooks/useDebounce';
 import styles from './SearchBox.module.css';
+import React, { useCallback } from 'react';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 export const SearchBox = () => {
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const query = searchParams.get('query');
+
+  const createQueryString = useCallback(
+    (name: string, value: string) => {
+      const params = new URLSearchParams(searchParams.toString());
+      params.set(name, value);
+
+      return params.toString();
+    },
+    [searchParams]
+  );
+
+  const debouncedChange = useDebounce((value: string) => {
+    if (value === '') {
+      router.push(pathname);
+    } else {
+      router.push(pathname + '?' + createQueryString('query', value));
+    }
+  }, 300);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    debouncedChange(e.target.value);
+  };
+
   return (
     <div className={styles.searchbox_container}>
       <svg
@@ -19,6 +50,8 @@ export const SearchBox = () => {
         type="text"
         className={styles.searchbox_input}
         placeholder="Find your character..."
+        onChange={handleChange}
+        defaultValue={query || ''}
       />
       <svg
         xmlns="http://www.w3.org/2000/svg"

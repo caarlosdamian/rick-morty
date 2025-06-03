@@ -10,9 +10,9 @@ interface Props {
 }
 
 export const Results = ({ characters }: Props) => {
-  // filter list based on searchbox
+
   return (
-    <SelectedCharacterContextProvider>
+    <SelectedCharacterContextProvider characters={characters}>
       <CardList characters={characters as Character[]} />
       <Gallery  />
     </SelectedCharacterContextProvider>
