@@ -1,0 +1,37 @@
+.scrollArrow_container {
+  width: 32px;
+  height: 32px;
+  background: rgba(123, 123, 123, 0.7);
+  border-radius: 4px;
+  position: absolute;
+  z-index: 999;
+  cursor: pointer;
+  &:active {
+    background: #5a5a5a;
+  }
+  &:focus {
+    background: #5a5a5a;
+  }
+}
+
+.arrow {
+  fill: var(--white);
+
+  &:hover {
+    fill: var(--green);
+  }
+  &:active {
+    fill: var(--green);
+  }
+}
+
+/* WIP add left and right */
+.up {
+  top: -32px;
+  margin: auto;
+}
+
+.down {
+  transform: rotate(180deg);
+  bottom: -32px;
+}

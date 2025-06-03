@@ -1,12 +1,40 @@
 .card_container {
-  background: aqua;
-  height: 227px;
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+  align-items: center;
+}
 
-  @media (min-width: 768px) {
+.card_content {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+  height: 180px;
+  overflow: scroll;
+}
+
+@media (min-width: 768px) {
+  .card_container {
     flex: 1;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     height: 100%;
     position: relative;
+    background: #1c1c1c;
+    padding: 30px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .card_content {
+    row-gap: 40px;
+    height: 494px;
+  }
+
+  .card_container .card_content {
+    gap: 54px;
   }
 }

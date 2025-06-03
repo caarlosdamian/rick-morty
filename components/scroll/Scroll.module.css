@@ -1,0 +1,23 @@
+.scroll_bar {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .scroll_container {
+    display: flex;
+    gap: 10px;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .scroll_bar {
+    position: relative;
+    display: block;
+    height: 100%;
+    width: 32px;
+  }
+}

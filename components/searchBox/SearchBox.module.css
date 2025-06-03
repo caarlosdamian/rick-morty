@@ -1,0 +1,26 @@
+.searchbox_container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--green);
+  padding: 16px;
+  min-width: 240px;
+  border-radius: 8px;
+  .searchbox_input {
+    background: transparent;
+    outline: none;
+    border: none;
+    color: var(--green);
+
+    &::placeholder {
+      color: rgba(118, 221, 0, 0.5);
+      font-size: 0.875rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+    }
+  }
+  .searchbox_user_icon {
+    justify-self: flex-end;
+  }
+}
