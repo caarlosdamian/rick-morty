@@ -1,8 +1,12 @@
 import Image from 'next/image';
 import styles from '../styles/page.module.css';
 import { CardList, FavList, Gallery } from '@/components';
+import { Character, getCharacters } from 'rickmortyapi';
 
-export default function Home() {
+export default async function Home() {
+  const {
+    data: { results },
+  } = await getCharacters();
   return (
     <main className={styles.main_container}>
       <div className={styles.main_bg}>
@@ -13,7 +17,7 @@ export default function Home() {
             </div>
           </div>
           <div className={styles.main_results}>
-            <CardList />
+            <CardList characters={results as Character[]} />
             <Gallery />
           </div>
         </div>
