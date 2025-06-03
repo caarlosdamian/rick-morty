@@ -9,11 +9,16 @@
   img {
     border-radius: 20px;
   }
+
   @media (min-width: 768px) {
     flex: 1;
     height: 100%;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
+
+    .hidden_desktop {
+      display: none !important;
+    }
 
     img {
       border-top-right-radius: 0;

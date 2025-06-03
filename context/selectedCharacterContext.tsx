@@ -15,6 +15,7 @@ interface ContextI {
   selectedCharacter: number;
   setSelectedCharacter: Dispatch<SetStateAction<number>>;
   selectedCharacterData: Character;
+  characters: Character[];
 }
 
 interface Props extends PropsWithChildren {
@@ -55,6 +56,7 @@ export const SelectedCharacterContextProvider = ({
         selectedCharacter,
         setSelectedCharacter,
         selectedCharacterData,
+        characters,
       }}
     >
       {children}

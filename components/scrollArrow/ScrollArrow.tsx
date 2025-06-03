@@ -3,11 +3,12 @@ import styles from './ScrollArrow.module.css';
 interface Props {
   direction: 'up' | 'down' | 'left' | 'right';
   onClick: () => void;
+  className?: string;
 }
-export const ScrollArrow = ({ direction, onClick }: Props) => (
+export const ScrollArrow = ({ direction, onClick, className }: Props) => (
   <div
     role="button"
-    className={`${styles.scrollArrow_container} ${styles[direction]}`}
+    className={`${styles.scrollArrow_container} ${styles[direction]} ${className}`}
     onClick={onClick}
   >
     <svg
