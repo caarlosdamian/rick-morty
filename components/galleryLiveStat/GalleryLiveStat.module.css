@@ -1,0 +1,22 @@
+.galleryLive_container {
+  width: 108.151px;
+  height: 27.529px;
+  border-radius: 10px;
+  opacity: 0.9;
+  background: #1a1a1a;
+  position: absolute;
+  top: 12px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  padding: 6px;
+  gap: 10px;
+}
+
+.live_title {
+  color: var(--white);
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.1875rem;
+}
