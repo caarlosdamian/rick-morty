@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Rick & Morty App
 
-## Getting Started
+## Descripción
 
-First, run the development server:
+Aplicación web para mostrar personajes de Rick & Morty con funcionalidades de favoritos, búsqueda y scroll infinito.
+
+---
+
+## Cómo levantar el proyecto
+
+1. Levantar la base de datos local usando json-server:
+
+```bash
+npx json-server db.json --port 8000
+```
+2. Ejecutar la aplicación en modo desarrollo:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+3. Correr las pruebas unitarias:
+
+```bash
+npm run test
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Lo que más me gustó de mi desarrollo
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Lo que más me gustó fue el reto de implementar todo y lograr que haya armonía entre el servidor y el cliente. Con Next.js tenemos un gran poder gracias al SSR (Server Side Rendering), que mejora mucho el rendimiento y la experiencia del usuario.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ¿Qué hubiera mejorado o agregado con más tiempo?
 
-## Learn More
+Agregar mas unit testing , pero estaba agotado, talvez pulir mucho mas mis componentes ya que todo puede mejorar.
 
-To learn more about Next.js, take a look at the following resources:
+## Pain point o bug y su solución
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Configurar unit testing siempre es tedioso pero al final se pudo intergrar sin problema. 
