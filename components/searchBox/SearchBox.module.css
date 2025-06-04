@@ -24,3 +24,9 @@
     justify-self: flex-end;
   }
 }
+
+@media (min-width: 768px) {
+  .searchbox_user_icon {
+    display: none;
+  }
+}

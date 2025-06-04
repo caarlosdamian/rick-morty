@@ -7,7 +7,7 @@ interface CharactersState {
 }
 
 const initialState: CharactersState = {
-  isOpen: true,
+  isOpen: false,
   favs: [],
 };
 
